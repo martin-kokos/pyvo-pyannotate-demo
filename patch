@@ -1,0 +1,22 @@
+--- flipper.py	(original)
++++ flipper.py	(refactored)
+@@ -1,8 +1,10 @@
+ def get_letter(word, n):
++    # type: (str, int) -> str
+     return word[n]
+ 
+ 
+ def flip(word):
++    # type: (str) -> str
+     flipped = []
+     for i in range(len(word)):
+         letter = get_letter(word, len(word) - i - 1)
+--- test_flipper.py	(original)
++++ test_flipper.py	(refactored)
+@@ -2,5 +2,6 @@
+ 
+ 
+ def test_flip():
++    # type: () -> None
+     # assert <statement>, 'Info message in case of failure of statement'
+     assert flipper.flip('John') == 'nhoJ'
